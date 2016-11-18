@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+.switchery {
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    vertical-align: middle;
+    width: 48px;
+}
+.switchery>small {
+	position: absolute;
+    height: 100%;
+    top: 0;
+    width: 26px;
+    background: url(images/switch.png) no-repeat -23px 2px;
+}
+.switchery + .switchery{
+	display: none;
+}
+.switchery,
+.switchery-blue {
+    background: url(images/switch.png) no-repeat 0 -59px;
+}
+.switchery-blue {
+    background-position: 0 -27px;
+}
+
+#separationpowersGrid tr:first-child + tr td .switchery,
+#separationpowersGrid tr:first-child + tr td .switchery-blue{
+	background-image: url(images/switch.png) ;
+}
+
+#separationpowersGrid  td .switchery,
+#separationpowersGrid  td .switchery-blue{
+	background-image: url(images/switch2.png) ;
+}

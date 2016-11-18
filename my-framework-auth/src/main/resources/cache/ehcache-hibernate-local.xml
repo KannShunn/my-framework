@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false" name="hibernateCache">
+
+	<diskStore path="java.io.tmpdir/ehcache/auth/hibernate" />
+
+	<!-- DefaultCache setting. -->
+	<defaultCache maxEntriesLocalHeap="10000" eternal="false" timeToIdleSeconds="300" timeToLiveSeconds="600" overflowToDisk="false" maxEntriesLocalDisk="100000" />
+	
+	<!--  -->
+	<cache name="com.cesgroup.auth.org.entity.Org" 											maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.user.entity.OrgUser" 									maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.user.entity.User" 										maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.user.entity.RoleUser" 									maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.roleclassification.entity.RoleClassification" 			maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.resource.entity.Resource" 								maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.resource.entity.RoleRes" 								maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.role.entity.Role" 										maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.code.entity.Code" 										maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.operatelog.entity.OperateLogEntity" 						maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+	<cache name="com.cesgroup.auth.syslog.entity.SysLogEntity" 								maxEntriesLocalHeap="10000" eternal="true" overflowToDisk="false" maxEntriesLocalDisk="10000" />
+</ehcache>
