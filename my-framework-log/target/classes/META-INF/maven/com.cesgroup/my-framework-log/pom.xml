@@ -22,7 +22,7 @@
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
-    	<artifactId>my-framework-auth</artifactId>
+    	<artifactId>my-framework-shiro</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>

@@ -2,9 +2,10 @@ package com.cesgroup.core.aop;
 
 import com.cesgroup.core.annotation.CesLog;
 import com.cesgroup.core.entity.IModel;
-import com.cesgroup.core.interfaces.CesLogProcessor;
+import com.cesgroup.core.facade.CesLogProcessor;
 import com.cesgroup.core.utils.ArrayUtil;
 import com.cesgroup.core.utils.StrUtil;
+
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import java.lang.reflect.Method;
 
 /**
@@ -90,10 +92,14 @@ public class LogAop
 				String operate = processELExpression(cesLog.operate());
 				String message = processELExpression(cesLog.message());
 				String note = processELExpression(cesLog.note());
-				logger.warn(type + " | " + operate + " | " + message);
+				StringBuilder loggerMsg = new StringBuilder();
+				loggerMsg.append(method.toString()).append(" - ").append(type).append(" | ").append(operate).append(" | ").append(message);
+				logger.warn(loggerMsg.toString());
 
 				if (cesLogProcessor != null) {
 					cesLogProcessor.saveLog(cesLog.isLog(),cesLog.isLogin(),type,operate,message,note,isSuccess);
+				}else{
+					logger.warn("没有组件实现cesLogProcessor接口");
 				}
 			}
 			/*cesLog.message();

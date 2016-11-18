@@ -4,13 +4,14 @@ import com.cesgroup.core.dao.BaseDao;
 import com.cesgroup.core.entity.BaseEntity;
 import com.cesgroup.core.entity.HasSysEntity;
 import com.cesgroup.core.entity.SortEntity;
-import com.cesgroup.core.interfaces.CUDListener;
+import com.cesgroup.core.facade.CUDListener;
 import com.cesgroup.core.service.BaseService;
 import com.cesgroup.core.utils.BeanContextAware;
 import com.cesgroup.core.utils.Collections3;
 import com.cesgroup.core.utils.DynamicSpecifications;
 import com.cesgroup.core.utils.SearchFilter;
 import com.cesgroup.core.utils.SearchFilter.Operator;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,6 +25,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.*;
+
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 

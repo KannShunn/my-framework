@@ -1,4 +1,4 @@
-package com.cesgroup.core.interfaces;
+package com.cesgroup.core.facade;
 
 /**
  * Created by Administrator on 2016-7-13.

@@ -11,7 +11,8 @@
   <name>my-framework-shiro</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<!-- shiro -->
+	<shiro.version>1.2.3</shiro.version>
   </properties>
   <dependencies>
   	<dependency>
@@ -19,5 +20,28 @@
   		<artifactId>my-framework-auth</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	
+  	<!-- shiro -->
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-spring</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-ehcache</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-core</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.shiro</groupId>
+		<artifactId>shiro-quartz</artifactId>
+		<version>${shiro.version}</version>
+	</dependency>
+		
   </dependencies>
 </project>

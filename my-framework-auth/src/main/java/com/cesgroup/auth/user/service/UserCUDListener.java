@@ -1,7 +1,7 @@
 package com.cesgroup.auth.user.service;
 
 import com.cesgroup.auth.user.entity.User;
-import com.cesgroup.core.interfaces.CUDListener;
+import com.cesgroup.core.facade.CUDListener;
 
 /**
  * Created by Administrator on 2016-7-12.

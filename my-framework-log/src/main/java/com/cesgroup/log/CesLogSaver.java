@@ -13,7 +13,7 @@ import com.cesgroup.auth.operatelog.entity.OperateLogEntity;
 import com.cesgroup.auth.syslog.dao.SysLogDao;
 import com.cesgroup.auth.syslog.entity.SysLogEntity;
 import com.cesgroup.common.global.Constants;
-import com.cesgroup.core.interfaces.CesLogProcessor;
+import com.cesgroup.core.facade.CesLogProcessor;
 import com.cesgroup.core.utils.DateUtil;
 import com.cesgroup.core.utils.Servlets;
 import com.cesgroup.core.utils.StrUtil;

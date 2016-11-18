@@ -1,4 +1,4 @@
-package com.cesgroup.core.interfaces;
+package com.cesgroup.core.facade;
 
 
 import com.cesgroup.core.entity.BaseEntity;

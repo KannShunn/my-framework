@@ -1,20 +1,35 @@
 package com.cesgroup.core.utils;
 
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.util.CellRangeAddress;
-import org.joda.time.DateTime;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.usermodel.HSSFPatriarch;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.ss.util.CellRangeAddress;
 
 
 public class ExcelUtil {
@@ -40,8 +55,7 @@ public class ExcelUtil {
 		  /* 处理中文文件名 */
 		fileName = convertFileName(fileName,request,response);
 
-		DateTime dt = new DateTime();
-		response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName  + "-" + dt.toString("dd-MM-yyyy HH:mm:ss") +".xls" + "\"");
+		response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName  + "-" + DateFormatUtils.format(new Date(), "dd-MM-yyyy HH:mm:ss") +".xls" + "\"");
 		response.setContentType("application/msexcel;");
 		os = response.getOutputStream();
 

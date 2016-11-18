@@ -304,4 +304,93 @@ public class OrgServiceImpl extends BaseServiceImpl<Org,OrgDao> implements OrgSe
 			
 		}
 	}
+	
+	
+	//增删改事件监听开始
+	@Override
+	public void onCreateStart(Org entity) {
+		if (orgCUDListener != null) {
+			orgCUDListener.onCreateStart(entity);
+		}
+	}
+
+	@Override
+	public Org onCreateSuccess(Org entity) {
+		if(orgCUDListener != null){
+			return orgCUDListener.onCreateSuccess(entity);
+		}
+		return entity;
+	}
+
+	@Override
+	public void onCreateError(Exception e, Org entity) {
+		if(orgCUDListener != null){
+			orgCUDListener.onCreateError(e,entity);
+		}
+	}
+
+	@Override
+	public void onCreateComplete(Org entity) {
+		if(orgCUDListener != null){
+			orgCUDListener.onCreateComplete(entity);
+		}
+	}
+
+	@Override
+	public void onUpdateStart(Org entity) {
+		if(orgCUDListener != null){
+			orgCUDListener.onUpdateStart(entity);
+		}
+	}
+
+	@Override
+	public Org onUpdateSuccess(Org entity) {
+		if(orgCUDListener != null){
+			return orgCUDListener.onUpdateSuccess(entity);
+		}
+		return entity;
+	}
+
+	@Override
+	public void onUpdateError(Exception e, Org entity) {
+		if(orgCUDListener != null){
+			orgCUDListener.onUpdateError(e,entity);
+		}
+	}
+
+	@Override
+	public void onUpdateComplete(Org entity) {
+		if(orgCUDListener != null){
+			orgCUDListener.onUpdateComplete(entity);
+		}
+	}
+
+	@Override
+	public void onDeleteStart(String ids) {
+		if(orgCUDListener != null){
+			orgCUDListener.onDeleteStart(ids);
+		}
+	}
+
+	@Override
+	public void onDeleteSuccess(String ids) {
+		if(orgCUDListener != null){
+			orgCUDListener.onDeleteSuccess(ids);
+		}
+	}
+
+	@Override
+	public void onDeleteError(Exception e, String ids) {
+		if(orgCUDListener != null){
+			orgCUDListener.onDeleteError(e,ids);
+		}
+	}
+
+	@Override
+	public void onDeleteComplete(String ids) {
+		if(orgCUDListener != null){
+			orgCUDListener.onDeleteComplete(ids);
+		}
+	}
+	//增删改事件监听结束
 }

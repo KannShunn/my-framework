@@ -14,6 +14,21 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
+
+	<!-- captcha -->
+	<dependency>
+		<groupId>com.octo.captcha</groupId>
+		<artifactId>jcaptcha-all</artifactId>
+		<version>1.0-RC6</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>spring</artifactId>
+				<groupId>org.springframework</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+		
+		
   	<dependency>
   		<groupId>com.cesgroup</groupId>
   		<artifactId>my-framework-shiro</artifactId>
