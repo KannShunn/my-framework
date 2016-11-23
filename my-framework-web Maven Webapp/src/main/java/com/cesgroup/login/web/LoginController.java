@@ -31,17 +31,6 @@ public class LoginController extends AuthBaseController<LoginFailedLog, LoginFai
 		return "登录";
 	}
 
-	@RequestMapping(value = "/blank")
-	public String blank(){
-		return "blank";
-	}
-	
-	@RequestMapping(value = "/index")
-	public String index(){
-		return "index";
-	}
-
-
 	@RequestMapping(value = "/login")
 	public String login(String loginName,Model model)
 	{

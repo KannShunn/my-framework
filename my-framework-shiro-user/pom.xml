@@ -5,11 +5,9 @@
   <parent>
     <groupId>com.cesgroup</groupId>
     <artifactId>my-framework</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
   </parent>
-  <groupId>com.cesgroup</groupId>
   <artifactId>my-framework-shiro-user</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>my-framework-shiro-user</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -23,4 +21,8 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+   <build>
+  		<finalName>my-framework-shiro</finalName>
+  </build> 
 </project>

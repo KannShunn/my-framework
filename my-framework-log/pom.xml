@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.cesgroup</groupId>
     <artifactId>my-framework</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
   </parent>
   <artifactId>my-framework-log</artifactId>
   <name>my-framework-log</name>
@@ -23,7 +23,11 @@
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-shiro</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
   </dependencies>
+  
+  <build>
+  		<finalName>my-framework-log</finalName>
+  </build>
 </project>

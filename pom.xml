@@ -4,7 +4,7 @@
 
 	<groupId>com.cesgroup</groupId>
 	<artifactId>my-framework</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>pom</packaging>
 	<name>my-framework-root</name>
 	<description>我的框架根pom</description>
@@ -295,20 +295,47 @@
 		<finalName>my_framework</finalName>
 		<plugins>
 			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version> 
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>  
+			        <uriEncoding>UTF-8</uriEncoding>
+			        <useBodyEncodingForURI>true</useBodyEncodingForURI>
+    			</configuration>  
+			</plugin>
+			<plugin>
+            	<inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                      <id>attach-sources</id>
+                      <goals>
+                       <goal>jar</goal>
+                      </goals>
+                      </execution>
+                  </executions>
+            </plugin>
 		</plugins>
 		<!-- <filters> <filter>src/main/filters/filter-${env}.properties</filter> 
 			</filters> -->

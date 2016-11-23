@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.cesgroup</groupId>
     <artifactId>my-framework</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
   </parent>
   <artifactId>my-framework-auth</artifactId>
   <name>my-framework-auth</name>
@@ -23,22 +23,26 @@
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-core</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-util</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-auth-constants</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-shiro-user</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+    	<version>0.0.1</version>
     </dependency>
   </dependencies>
+  
+  <build>
+  		<finalName>my-framework-auth</finalName>
+  </build>
 </project>

@@ -8,6 +8,17 @@ import com.cesgroup.core.web.NonEntityServiceController;
 @Controller
 public class MenuController {
 
+	@RequestMapping(value = "/blank")
+	public String blank(){
+		return "blank";
+	}
+	
+	@RequestMapping(value = "/index")
+	public String index(){
+		return "index";
+	}
+	
+	
 	@RequestMapping(value="/leftMenuAuth")
 	public String leftMenuAuth(){
 		return "left-auth";
