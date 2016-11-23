@@ -39,33 +39,33 @@
 		<property name="password" value="${jdbc.password}" />
 
 		<!-- 配置初始化大小、最小、最大 -->
-		<property name="initialSize" value="5" />
-		<property name="minIdle" value="3" />
-		<property name="maxActive" value="20" />
+		<property name="initialSize" value="${jdbc.initialSize}" />
+		<property name="minIdle" value="${jdbc.minIdle}" />
+		<property name="maxActive" value="${jdbc.maxActive}" />
 
 		<!-- 配置获取连接等待超时的时间 -->
-		<property name="maxWait" value="60000" />
+		<property name="maxWait" value="${jdbc.maxWait}" />
 
 		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
-		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}" />
 
 		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
-		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />
 
-		<property name="validationQuery" value="SELECT 'x' FROM T_AUTH_VERSION " />
-		<property name="testWhileIdle" value="true" />
-		<property name="testOnBorrow" value="false" />
-		<property name="testOnReturn" value="false" />
+		<property name="validationQuery" value="${jdbc.validationQuery}" />
+		<property name="testWhileIdle" value="${jdbc.testWhileIdle}" />
+		<property name="testOnBorrow" value="${jdbc.testOnBorrow}" />
+		<property name="testOnReturn" value="${jdbc.testOnReturn}" />
 
 		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
-		<property name="poolPreparedStatements" value="true" />
+		<property name="poolPreparedStatements" value="${jdbc.poolPreparedStatements}" />
 		<property name="maxPoolPreparedStatementPerConnectionSize"
-			value="20" />
+			value="${jdbc.maxPoolPreparedStatementPerConnectionSize}" />
 
 		<!-- 配置监控统计拦截的filters -->
-		<property name="filters" value="stat,slf4j" />
+		<property name="filters" value="${jdbc.filters}" />
 		<!-- 慢sql 过滤 -->
-		<property name="connectionProperties" value="druid.stat.slowSqlMillis=5000" />
+		<property name="connectionProperties" value="${jdbc.connectionProperties}" />
 
 		<!-- 配置数据源日志输出 -->
 		<property name="proxyFilters">
