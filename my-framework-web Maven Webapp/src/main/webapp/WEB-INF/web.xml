@@ -9,9 +9,8 @@
 		<param-name>contextConfigLocation</param-name>
 		<!-- 允许本地工程配置覆盖框架配置 -->
 		<param-value>
-			classpath*:/spring/applicationContext-*.xml,
 			classpath*:/applicationContext.xml,
-			classpath*:/applicationContext-*.xml
+			classpath*:/spring/applicationContext-*.xml,
 		</param-value>
 	</context-param>
 
