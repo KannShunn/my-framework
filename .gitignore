@@ -1,0 +1,20 @@
+/my-framework.iml
+/.idea
+/my-framework-web Maven Webapp/target
+/my-framework-web Maven Webapp/my-framework-web.iml
+/my-framework-util/target
+/my-framework-util/my-framework-util.iml
+/my-framework-shiro-user/target
+/my-framework-shiro-user/my-framework-shiro-user.iml
+/my-framework-shiro/target
+/my-framework-shiro/my-framework-shiro.iml
+/my-framework-log/target
+/my-framework-log/my-framework-log.iml
+/my-framework-jcaptcha/target
+/my-framework-jcaptcha/my-framework-jcaptcha.iml
+/my-framework-core/target
+/my-framework-core/my-framework-core.iml
+/my-framework-auth-constants/target
+/my-framework-auth-constants/my-framework-auth-constants.iml
+/my-framework-auth/target
+/my-framework-auth/my-framework-auth.iml

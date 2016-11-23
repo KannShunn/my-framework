@@ -1,6 +1,0 @@
-com\cesgroup\shiro\KickoutSessionControlFilter.class
-com\cesgroup\shiro\AuthLogoutFilter.class
-com\cesgroup\shiro\RetryLimitHashedCredentialsMatcher.class
-com\cesgroup\shiro\MyFormAuthenticationFilter.class
-com\cesgroup\shiro\ShiroDbRealm.class
-com\cesgroup\shiro\SessionFilter.class
