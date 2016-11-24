@@ -292,7 +292,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>my_framework</finalName>
+		<finalName>my-framework-root-${project.version}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>

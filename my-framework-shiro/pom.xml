@@ -47,6 +47,6 @@
   
   
   <build>
-  		<finalName>my-framework-shiro</finalName>
+  		<finalName>my-framework-shiro-${project.version}</finalName>
   </build>
 </project>

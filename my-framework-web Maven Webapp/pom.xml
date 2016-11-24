@@ -30,6 +30,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>my-framework-web</finalName>
+    <finalName>my-framework-web-${project.version}</finalName>
   </build>
 </project>

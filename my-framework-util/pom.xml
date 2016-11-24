@@ -85,7 +85,7 @@
   
   
   <build>
-  		<finalName>my-framework-util</finalName>
+  		<finalName>my-framework-util-${project.version}</finalName>
   </build>
   
 </project>

@@ -23,6 +23,6 @@
   </dependencies>
   
    <build>
-  		<finalName>my-framework-shiro</finalName>
+  		<finalName>my-framework-shiro-user-${project.version}</finalName>
   </build> 
 </project>

@@ -28,6 +28,6 @@
   </dependencies>
   
   <build>
-  		<finalName>my-framework-log</finalName>
+  		<finalName>my-framework-log-${project.version}</finalName>
   </build>
 </project>

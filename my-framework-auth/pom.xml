@@ -43,6 +43,6 @@
   </dependencies>
   
   <build>
-  		<finalName>my-framework-auth</finalName>
+  		<finalName>my-framework-auth-${project.version}</finalName>
   </build>
 </project>

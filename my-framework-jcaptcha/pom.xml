@@ -37,6 +37,6 @@
   </dependencies>
   
   <build>
-  		<finalName>my-framework-jcaptcha</finalName>
+  		<finalName>my-framework-jcaptcha-${project.version}</finalName>
   </build>
 </project>

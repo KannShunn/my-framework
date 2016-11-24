@@ -28,6 +28,6 @@
   </dependencies>
   
   <build>
-  		<finalName>my-framework-core</finalName>
+  		<finalName>my-framework-core-${project.version}</finalName>
   </build>
 </project>
