@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.cesgroup</groupId>
     <artifactId>my-framework</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>my-framework-core</artifactId>
   <name>my-framework-core</name>
@@ -28,6 +28,6 @@
   </dependencies>
   
   <build>
-  		<finalName>my-framework-core-${project.version}</finalName>
+  		<finalName>${project.artifactId}-${project.version}</finalName>
   </build>
 </project>

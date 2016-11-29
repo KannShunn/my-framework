@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cesgroup</groupId>
+		<artifactId>my-framework</artifactId>
+		<version>0.0.2-SNAPSHOT</version>
+	</parent>
+	<artifactId>my-framework-parent</artifactId>
+	<name>my-framework-parent</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<packaging>pom</packaging>
+	<description>用于给外部pom继承用，deploy时发布的地址是api库</description>
+
+	<distributionManagement>
+		<repository>
+			<id>my-service-api-releases</id>
+			<url>http://localhost:8081/nexus/content/repositories/my-service-api-releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>my-service-api-snapshots</id>
+			<url>http://localhost:8081/nexus/content/repositories/my-service-api-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

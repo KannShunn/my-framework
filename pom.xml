@@ -4,12 +4,14 @@
 
 	<groupId>com.cesgroup</groupId>
 	<artifactId>my-framework</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>my-framework-root</name>
 	<description>我的框架根pom</description>
 
 	<properties>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- spring -->
 		<spring.version>4.0.5.RELEASE</spring.version>
 		<spring-aspect.version>4.0.7.RELEASE</spring-aspect.version>
@@ -45,9 +47,23 @@
 		<cglib.version>3.1</cglib.version>
 	</properties>
 
-
+	<repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://localhost:8081/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://localhost:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
 	<dependencies>
-
+	
 		<!-- test -->
 		<!-- junit -->
 		<dependency>
@@ -289,6 +305,31 @@
 			<artifactId>cglib</artifactId>
 			<version>${cglib.version}</version>
 		</dependency>
+		
+		
+		<!-- thirdparty -->
+		<!-- jdbc -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.39</version>
+			<classifier>bin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.dm</groupId>
+			<artifactId>dmjdbc</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>10.1.0.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sqlserver</groupId>
+			<artifactId>sqljdbc</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -315,11 +356,32 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<reportOutputDirectory>../javadocs</reportOutputDirectory>
+					<destDir>easy-delivery</destDir>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<locales>zh_CN</locales>
+				</configuration>
+			</plugin> 
+			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.0</version>
 				<configuration>  
 			        <uriEncoding>UTF-8</uriEncoding>
+					<url>http://localhost:8080/manager/html</url>
+					<server>tomcat</server>
+					<username>admin</username>
+					<password>admin</password>
     			</configuration>
 			</plugin>
 			<plugin>
@@ -336,9 +398,49 @@
                       </execution>
                   </executions>
             </plugin>
+            <plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-repository-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.4</version>
+			</plugin>
+			<plugin>
+				<groupId>br.com.objectos</groupId>
+				<artifactId>sql-maven-plugin</artifactId>
+				<version>0.11.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
-		<!-- <filters> <filter>src/main/filters/filter-${env}.properties</filter> 
-			</filters> -->
+<!-- 		<filters> 
+			<filter>src/main/filters/filter-${env}.properties</filter> 
+		</filters> -->
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -348,6 +450,18 @@
 
 
 	</build>
+	
+	<distributionManagement>
+		<repository>
+		    <id>my-framework-releases</id>
+		    <url>http://localhost:8081/nexus/content/repositories/my-framework-releases</url>
+		</repository>
+	  	<snapshotRepository>
+		    <id>my-framework-snapshots</id>
+		    <url>http://localhost:8081/nexus/content/repositories/my-framework-snapshots</url>
+	    </snapshotRepository>
+	</distributionManagement>
+		
 	<modules>
 		<module>my-framework-core</module>
 		<module>my-framework-util</module>
@@ -358,5 +472,7 @@
 		<module>my-framework-log</module>
 		<module>my-framework-web Maven Webapp</module>
 		<module>my-framework-jcaptcha</module>
+		
+		<module>my-framework-parent</module>
 	</modules>
 </project>

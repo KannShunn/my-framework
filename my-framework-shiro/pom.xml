@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.cesgroup</groupId>
     <artifactId>my-framework</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>my-framework-shiro</artifactId>
   <name>my-framework-shiro</name>

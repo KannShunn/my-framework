@@ -4,27 +4,6 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-jee/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="my-framework-auth-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-auth/my-framework-auth">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="my-framework-core-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-core/my-framework-core">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="my-framework-util-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-util/my-framework-util">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="my-framework-auth-constants-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-auth-constants/my-framework-auth-constants">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="my-framework-shiro-user-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-shiro-user/my-framework-shiro-user">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="my-framework-jcaptcha-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-jcaptcha/my-framework-jcaptcha">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="my-framework-shiro-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/my-framework-shiro/my-framework-shiro">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="my-framework-web"/>
         <property name="java-output-path" value="/my-framework-web Maven Webapp/target/classes"/>
     </wb-module>
