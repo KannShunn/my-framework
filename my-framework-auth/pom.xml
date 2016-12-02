@@ -23,22 +23,22 @@
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-core</artifactId>
-    	<version>0.0.1</version>
+    	<version>0.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-util</artifactId>
-    	<version>0.0.1</version>
+    	<version>0.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-auth-constants</artifactId>
-    	<version>0.0.1</version>
+    	<version>0.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-shiro-user</artifactId>
-    	<version>0.0.1</version>
+    	<version>0.0.2-SNAPSHOT</version>
     </dependency>
   </dependencies>
   
