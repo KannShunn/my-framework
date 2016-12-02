@@ -72,7 +72,7 @@
         <property name="ignoreUnresolvablePlaceholders" value="true" />
         <property name="locations">
             <list>
-                <value>classpath:conf/*.properties</value>
+                <value>classpath*:conf/*.properties</value>
                 <!-- <value>classpath:conf/application.properties</value> -->
             </list>
         </property>

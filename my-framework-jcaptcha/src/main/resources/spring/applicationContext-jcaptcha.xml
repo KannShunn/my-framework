@@ -7,9 +7,11 @@
 
 	<description>验证码配置</description>
 
+	<!-- <context:property-placeholder ignore-unresolvable="true" location="classpath*:conf/*.properties" />  -->
+
 	<!-- 前台验证码过滤器 -->
 	<bean id="jCaptchaValidateFilter" class="com.cesgroup.catpcha.JCaptchaValidateFilter">
-		<property name="jcaptchaEbabled" value="false" />
+		<property name="jcaptchaEbabled" value="${jcaptchaEbabled}" />
 		<property name="jcaptchaParam" value="jcaptchaCode" />
 		<property name="failureKeyAttribute" value="shiroLoginFailure" />
 	</bean>
