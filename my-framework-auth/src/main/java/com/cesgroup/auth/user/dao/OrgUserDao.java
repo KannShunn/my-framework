@@ -15,17 +15,17 @@ import com.cesgroup.core.dao.BaseDao;
 public interface OrgUserDao extends BaseDao<OrgUser>{
 
 	@Modifying
-//	@Transactional
+	@Transactional
 	@Query("delete from OrgUser where userId = :userId")
 	void deleteByUserId(@Param("userId") String userId);
 	
 	@Modifying
-//	@Transactional
+	@Transactional
 	@Query("delete from OrgUser where userId = :userId and organizeId = :orgId")
 	void deleteByUserIdAndOrgId(@Param("userId") String userId, @Param("orgId") String orgId);
 
 	@Modifying
-//	@Transactional
+	@Transactional
 	@Query("delete from OrgUser where userId = :userId and organizeId = :orgId and userType = :userType")
 	void deleteByUserIdAndOrgIdAndUserType(@Param("userId") String userId, @Param("orgId") String orgId, @Param("userType") String userType);
 	
@@ -37,7 +37,7 @@ public interface OrgUserDao extends BaseDao<OrgUser>{
 	int getCountByUserIdAndUnitId(@Param("userId") String userId, @Param("unitId") String unitId);
 	
 	@Modifying
-//	@Transactional
+	@Transactional
 	@Query("update OrgUser set organizeId = :newOrgId, unitId = :unitId where userId = :userId and organizeId = :oldOrgId and userType = "+Constants.User.FULLTIME+"")
 	void changeUserOrg(@Param("userId") String userId, @Param("newOrgId") String newOrgId,@Param("oldOrgId") String oldOrgId, @Param("unitId") String unitId);
 

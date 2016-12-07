@@ -21,6 +21,7 @@ import java.util.List;
 public interface CodeDao extends BaseDao<Code>{
 
 	@Modifying
+	@Transactional
 	@Query("update Code set status = :status where id = :id")
 	void updateStatus(@Param("id") String id,@Param("status") String status);
 
@@ -43,6 +44,7 @@ public interface CodeDao extends BaseDao<Code>{
 	List<Code> getByParentCode(String parentCode);
 
 	@Modifying
+	@Transactional
 	@Query("update Code set pId = :pId, parentCode = :parentCode where id = :id")
 	void moveCode(@Param("id")String codeId, @Param("pId")String newPId, @Param("parentCode")String newParentCode);
 }

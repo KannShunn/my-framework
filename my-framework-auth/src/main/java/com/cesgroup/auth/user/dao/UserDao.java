@@ -28,6 +28,7 @@ public interface UserDao extends BaseDao<User>
 	public User getByLoginName(@Param("loginName") String loginName);
 
 	@Modifying
+	@Transactional
 	@Query("update User set status = '"+ Constants.User.OFFJOB+"',offJobDate = :offJobDate where id = :userId")
 	public void deleteByUserId(@Param("userId") String userId,@Param("offJobDate") String offJobDate);
 
