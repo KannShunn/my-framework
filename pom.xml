@@ -358,5 +358,6 @@
 		<module>my-framework-log</module>
 		<module>my-framework-web Maven Webapp</module>
 		<module>my-framework-jcaptcha</module>
+		<module>my-framework-auth-api</module>
 	</modules>
 </project>

@@ -1,6 +1,7 @@
 package com.cesgroup.shiro;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.util.AntPathMatcher;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -8,16 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class SessionFilter implements Filter {
-  
+
+    AntPathMatcher matcher = null;
     @Override  
-    public void init(FilterConfig filterConfig) throws ServletException {}
+    public void init(FilterConfig filterConfig) throws ServletException {
+        matcher = new AntPathMatcher();
+    }
   
     @Override  
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
             ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
-        //      if (httpServletRequest.getSession().getAttribute("user") == null) {  
+        if (matcher.match("/api/**",httpServletRequest.getRequestURI())
+           || matcher.match("/test/**",httpServletRequest.getRequestURI())
+           || matcher.match("/reception/**",httpServletRequest.getRequestURI())) {
+            chain.doFilter(request, response);
+            return;
+        }
+        //      if (httpServletRequest.getSession().getAttribute("user") == null) {
         if (!SecurityUtils.getSubject().isRemembered()) {
             if (!SecurityUtils.getSubject().isAuthenticated()) {
                 //判断session里是否有用户信息

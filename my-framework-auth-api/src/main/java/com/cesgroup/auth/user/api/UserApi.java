@@ -1,4 +1,4 @@
-package com.cesgroup.auth.reception;
+package com.cesgroup.auth.user.api;
 
 import com.cesgroup.auth.user.entity.User;
 import com.cesgroup.auth.user.service.UserService;
@@ -17,8 +17,8 @@ import java.util.Map;
  * Time: 17:19
  */
 @Controller
-@RequestMapping(value = "/reception/auth")
-public class AuthReceptionController extends NonEntityServiceController{
+@RequestMapping(value = "/api/auth")
+public class UserApi extends NonEntityServiceController{
 
     @Override
     public String getModelName() {

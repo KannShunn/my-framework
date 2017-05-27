@@ -78,7 +78,7 @@
 	<logger name="org.hibernate.SQL" level="INFO" />
 
 	<!-- root -->
-	<root level="WARN">
+	<root level="INFO">
 		<appender-ref ref="console" />
 		<!-- <appender-ref ref="defaultlogFile" /> -->
 	</root>

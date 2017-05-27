@@ -23,6 +23,11 @@
     	<artifactId>my-framework-auth</artifactId>
     	<version>0.0.1</version>
     </dependency>
+	<dependency>
+		  <groupId>com.cesgroup</groupId>
+		  <artifactId>my-framework-auth-api</artifactId>
+		  <version>0.0.1</version>
+	</dependency>
     <dependency>
     	<groupId>com.cesgroup</groupId>
     	<artifactId>my-framework-jcaptcha</artifactId>
