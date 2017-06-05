@@ -67,7 +67,7 @@
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 	<!-- 加载配置文件 -->
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="com.cesgroup.core.utils.SpringPropertyConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="true" />
         <property name="locations">
             <list>
@@ -77,4 +77,8 @@
         </property>
 	</bean>
 
+	<bean id="xmlResource" class="com.cesgroup.core.dal.resource.XmlResource" lazy-init="false" init-method="init">
+		<!-- SQL的Xml配置路径 -->
+		<property name="resources" value="classpath*:sqlMap/sqlMap_*.xml" />
+	</bean>
 </beans>

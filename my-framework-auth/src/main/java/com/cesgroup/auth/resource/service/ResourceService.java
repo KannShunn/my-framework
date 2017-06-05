@@ -57,4 +57,5 @@ public interface ResourceService extends BaseService<Resource>{
 	 * @return
 	 */
 	List<Resource> getDefaultResources();
+
 }

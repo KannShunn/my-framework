@@ -1,20 +1,5 @@
 package com.cesgroup.auth.user.service.impl;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.cesgroup.auth.failedlog.service.LoginFailedLogService;
 import com.cesgroup.auth.org.entity.Org;
 import com.cesgroup.auth.org.service.OrgService;
@@ -32,14 +17,23 @@ import com.cesgroup.auth.user.service.UserService;
 import com.cesgroup.auth.user.vo.UserGridVo;
 import com.cesgroup.common.global.Constants;
 import com.cesgroup.core.service.impl.BaseServiceImpl;
-import com.cesgroup.core.utils.ArrayUtil;
-import com.cesgroup.core.utils.Collections3;
-import com.cesgroup.core.utils.DateUtil;
-import com.cesgroup.core.utils.JDBCUtil;
-import com.cesgroup.core.utils.SearchFilter;
-import com.cesgroup.core.utils.StrUtil;
-import com.cesgroup.core.utils.Util;
+import com.cesgroup.core.utils.*;
 import com.cesgroup.core.vo.PageVo;
+import org.apache.commons.lang3.StringUtils;
+import org.hibernate.SQLQuery;
+import org.hibernate.transform.Transformers;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 用户服务
@@ -735,5 +729,13 @@ public class UserServiceImpl extends BaseServiceImpl<User,UserDao> implements Us
 				update(user);
 			}
 		}
+	}
+
+
+	@Override
+	public List<Map<String,Object>> getAllUserResources(String unitId) {
+		Map<String,Object> paramMap = new HashMap<String,Object>();
+		paramMap.put("unitId",unitId);
+		return queryForListBySqlId("User.getAllUserResources",paramMap);
 	}
 }

@@ -186,6 +186,11 @@ public interface Constants {
 		public final static String YES = "0";
 		/** 否 */
 		public final static String NO = "1";
+
+		/** 成功 */
+		public final static int SUCCESS = 0;
+		/** 失败 */
+		public final static int FAILED = 1;
 	}
 	
 }

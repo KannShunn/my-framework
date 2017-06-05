@@ -1,0 +1,29 @@
+<sqlMap namespace="User">
+    <sql id="getAllUserResources">
+        <![CDATA[
+        select
+            u.USER_ID as userId,
+            u.LOGIN_NAME as loginName,
+            u.USER_NAME as userName,
+            u.EMAIL as email,
+            u.MOBILE as mobile,
+            u.JOB_NO as jobNo,
+            re.URL as resUrl
+        from
+            t_auth_user u
+            inner join t_auth_role_user ru
+                on u.USER_ID = ru.USER_ID
+            inner join t_auth_role ro
+                on ru.ROLE_ID = ro.ROLE_ID
+            inner join t_auth_role_resource rr
+                on rr.ROLE_ID = ro.ROLE_ID
+            inner join t_auth_resource re
+                on re.RESOURCE_ID = rr.RESOURCE_ID
+        where
+            u.STATUS = 0
+            and JOB_NO is not null
+            and re.IS_SYSTEM = 1
+            and ro.UNIT_ID in ('-1',:unitId)
+	 ]]>
+    </sql>
+</sqlMap>

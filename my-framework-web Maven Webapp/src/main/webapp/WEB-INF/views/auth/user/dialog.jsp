@@ -23,7 +23,7 @@
 		   			<table cellspacing="0" cellpadding="0" style="float: left">
 		   				<tr>
 		   					<td class="tdLabel">用户登录名：</td>
-		   					<td class="tdElement"><cui:input name="loginName" width="200" required="true" valid="checkUnique" uniqueScope="status" pattern="//^[A-Za-z0-9\u4E00-\u9FA5]{1,150}$//" errMsg="长度在1-150之间的字母数字汉字" errMsgPosition="right"></cui:input></td>
+		   					<td class="tdElement"><cui:input name="loginName" width="200" required="true" valid="checkUnique" uniqueScope="status" pattern="//^[\.A-Za-z0-9\u4E00-\u9FA5]{1,150}$//" errMsg="长度在1-150之间的字母数字汉字" errMsgPosition="right"></cui:input></td>
 		   				</tr>		   				
 		   				<tr>
 		   					<td class="tdLabel">用户姓名：</td>

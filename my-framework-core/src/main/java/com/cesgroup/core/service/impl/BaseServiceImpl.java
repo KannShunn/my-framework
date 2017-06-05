@@ -1,5 +1,8 @@
 package com.cesgroup.core.service.impl;
 
+import com.cesgroup.core.dal.resource.XmlResource;
+import com.cesgroup.core.dal.resource.parse.FreeMakerParser;
+import com.cesgroup.core.dal.resource.parse.SqlBean;
 import com.cesgroup.core.dao.BaseDao;
 import com.cesgroup.core.entity.BaseEntity;
 import com.cesgroup.core.entity.HasSysEntity;
@@ -11,8 +14,9 @@ import com.cesgroup.core.utils.Collections3;
 import com.cesgroup.core.utils.DynamicSpecifications;
 import com.cesgroup.core.utils.SearchFilter;
 import com.cesgroup.core.utils.SearchFilter.Operator;
-
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.SQLQuery;
+import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,9 +29,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.*;
-
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * baseservice 基本实现。
@@ -460,6 +465,28 @@ public abstract class BaseServiceImpl<T extends BaseEntity<String>,D extends Bas
 	public Class<T> getEntityClass(){
 		return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	}
-	
+
+
+	public String getSQL(String sqlId, Map<String, Object> paramMap){
+		SqlBean sqlBean = XmlResource.getSQL(sqlId);
+		String sql = FreeMakerParser.process(paramMap, sqlBean.getContent(), sqlId);
+		return sql;
+	}
+
+	public List<Map<String,Object>> queryForListBySqlId(String sqlId, Map<String, Object> paramMap){
+		String sql = getSQL(sqlId, paramMap);
+		Query query = entityManager.createNativeQuery(sql);
+		query.unwrap(SQLQuery.class).setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP);
+
+		if(paramMap != null && !paramMap.isEmpty()){
+			Set<Map.Entry<String, Object>> entries = paramMap.entrySet();
+			for (Map.Entry<String, Object> entry : entries) {
+				query.setParameter(entry.getKey(),entry.getValue());
+			}
+		}
+
+		List<Map<String,Object>> result = query.getResultList();
+		return result;
+	}
 	
 }

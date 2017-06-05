@@ -1,22 +1,21 @@
 package com.cesgroup.auth.resource.service.impl;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.cesgroup.auth.resource.dao.ResourceDao;
 import com.cesgroup.auth.resource.dao.RoleResDao;
 import com.cesgroup.auth.resource.entity.Resource;
 import com.cesgroup.auth.resource.service.ResourceService;
 import com.cesgroup.common.global.Constants;
 import com.cesgroup.core.service.impl.BaseServiceImpl;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 @Service
 @Transactional
 public class ResourceServiceImpl extends BaseServiceImpl<Resource,ResourceDao> implements ResourceService{
@@ -165,4 +164,5 @@ public class ResourceServiceImpl extends BaseServiceImpl<Resource,ResourceDao> i
 	public List<Resource> getDefaultResources() {
 		return getDao().getDefaultResources();
 	}
+
 }

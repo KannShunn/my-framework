@@ -5,8 +5,9 @@ import com.cesgroup.auth.org.vo.OrgUserTreeVo;
 import com.cesgroup.auth.resource.entity.Resource;
 import com.cesgroup.auth.user.entity.User;
 import com.cesgroup.auth.user.vo.UserGridVo;
-import com.cesgroup.core.utils.SearchFilter;
+import com.cesgroup.auth.user.vo.UserVo;
 import com.cesgroup.core.service.BaseService;
+import com.cesgroup.core.utils.SearchFilter;
 import com.cesgroup.core.vo.PageVo;
 
 import java.util.List;
@@ -219,4 +220,11 @@ public interface UserService extends BaseService<User>
 	void unlockUser(String id);
 
 	void lockUser(String id);
+
+	/**
+	 * 根据单位id获取用户和资源的对应关系
+	 * @param unitId
+	 * @return
+	 */
+	List<Map<String,Object>> getAllUserResources(String unitId);
 }

@@ -1,15 +1,14 @@
 package com.cesgroup.auth.resource.dao;
 
 
-import java.util.List;
-
+import com.cesgroup.auth.resource.entity.Resource;
+import com.cesgroup.common.global.Constants;
+import com.cesgroup.core.dao.BaseDao;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.cesgroup.auth.resource.entity.Resource;
-import com.cesgroup.common.global.Constants;
-import com.cesgroup.core.dao.BaseDao;
+import java.util.List;
 
 
 public interface ResourceDao extends BaseDao<Resource>
@@ -34,4 +33,5 @@ public interface ResourceDao extends BaseDao<Resource>
 
 	@Query("select re from Resource re where re.isDefault = '"+Constants.Common.YES+"' order by re.showOrder")
 	List<Resource> getDefaultResources();
+
 }
