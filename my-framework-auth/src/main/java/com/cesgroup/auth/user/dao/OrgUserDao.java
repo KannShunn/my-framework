@@ -11,7 +11,8 @@ import com.cesgroup.auth.user.entity.OrgUser;
 import com.cesgroup.common.global.Constants;
 import com.cesgroup.core.dao.BaseDao;
 
-//@Transactional
+
+@Transactional
 public interface OrgUserDao extends BaseDao<OrgUser>{
 
 	@Modifying

@@ -1,14 +1,15 @@
 package com.cesgroup.auth.user.dao;
 
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
 import com.cesgroup.auth.user.entity.RoleUser;
 import com.cesgroup.common.global.Constants;
 import com.cesgroup.core.dao.BaseDao;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
-//@Transactional
+
+@Transactional
 public interface RoleUserDao extends BaseDao<RoleUser>{
 
 	@Modifying

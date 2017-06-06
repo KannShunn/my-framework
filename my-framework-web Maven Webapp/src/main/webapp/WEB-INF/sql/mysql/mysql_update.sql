@@ -4,7 +4,7 @@ BEGIN
 DECLARE ver INT;
 DECLARE cnt INT;
 
-    SELECT COUNT(*) into cnt FROM information_schema.TABLES WHERE TABLE_NAME='T_AUTH_VERSION' and TABLE_SCHEMA = 'my_framework';
+    SELECT COUNT(*) into cnt FROM information_schema.TABLES WHERE TABLE_NAME='T_AUTH_VERSION' and TABLE_SCHEMA = 'ehr-bench-backstage';
     IF cnt = 0 THEN 
         SELECT '创建version表';  
         CREATE TABLE T_AUTH_VERSION

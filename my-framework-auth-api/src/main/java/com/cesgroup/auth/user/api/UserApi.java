@@ -49,7 +49,7 @@ public class UserApi extends NonEntityServiceController{
         return jsonResult;
     }
 
-    @RequestMapping(value = "/getAllUserResource",method = RequestMethod.POST)
+    @RequestMapping(value = "/getAllUserResource")
     public JsonResult<Map<String,Object>> getAllUserResource(@RequestParam String unitId){
         JsonResult<Map<String,Object>> jsonResult = new JsonResult<Map<String,Object>>();
         if(StringUtils.isEmpty(unitId)){

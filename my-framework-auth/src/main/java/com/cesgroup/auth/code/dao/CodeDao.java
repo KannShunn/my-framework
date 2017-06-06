@@ -17,7 +17,8 @@ import java.util.List;
  * 编码数据访问层
  * <p>描述:编码数据访问层</p>
  */
-//@Transactional
+
+@Transactional
 public interface CodeDao extends BaseDao<Code>{
 
 	@Modifying
