@@ -11,7 +11,7 @@
   <name>my-framework-util</name>
   <url>http://maven.apache.org</url>
   <properties>
-  
+
   	<!-- poi -->
     <apache-poi.version>3.10-FINAL</apache-poi.version>
 	<!-- dozer -->
@@ -26,18 +26,20 @@
 	<pinyin4j.version>2.5.0</pinyin4j.version>
 	<!-- joda-time -->
 	<joda-time.version>2.9.2</joda-time.version>
+    <!-- httpClient -->
+    <commons.httpclient.version>4.5.2</commons.httpclient.version>
   </properties>
-  
-  
+
+
   <dependencies>
-  
+
 	<!-- poi -->
 	<dependency>
 		<groupId>org.apache.poi</groupId>
 		<artifactId>poi</artifactId>
 		<version>${apache-poi.version}</version>
 	</dependency>
-	
+
 	<!-- dozer -->
 	<dependency>
 		<groupId>net.sf.dozer</groupId>
@@ -58,7 +60,7 @@
 		<artifactId>fastjson</artifactId>
 		<version>${alibaba-fastjson.version}</version>
 	</dependency>
-	
+
 	<!-- net.sf.json -->
 	<dependency>
 		<groupId>net.sf.json-lib</groupId>
@@ -74,18 +76,25 @@
 		<version>${pinyin4j.version}</version>
 	</dependency>
 
+    <!-- httpClient -->
+    <dependency>
+		<groupId>org.apache.httpcomponents</groupId>
+		<artifactId>httpclient</artifactId>
+		<version>${commons.httpclient.version}</version>
+	</dependency>
+
 	<!-- joda-time -->
 <!-- 	<dependency>
 		<groupId>joda-time</groupId>
 		<artifactId>joda-time</artifactId>
 		<version>${joda-time.version}</version>
 	</dependency> -->
-	
+
   </dependencies>
-  
-  
+
+
   <build>
   		<finalName>my-framework-util-${project.version}</finalName>
   </build>
-  
+
 </project>

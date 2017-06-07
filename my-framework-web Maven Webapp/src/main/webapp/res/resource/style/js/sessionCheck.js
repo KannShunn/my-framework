@@ -18,7 +18,7 @@ $.ajaxSetup({
 	complete : function(data, TS) {
 		var sessionStatus = data.getResponseHeader('sessionstatus');
 		if(sessionStatus == 'timeout') {
-			window.location =  window.location.href;l
+			window.location =  window.location.href;
 		}
 		/*var status = data.status;
 		if (status == 300469) {
