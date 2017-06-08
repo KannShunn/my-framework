@@ -88,6 +88,17 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<filter>
+		<filter-name>parameterFilter</filter-name>
+		<filter-class>com.cesgroup.common.filter.ParameterFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>parameterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
 
 	<!-- Shiro Security filter -->
 	<filter>
