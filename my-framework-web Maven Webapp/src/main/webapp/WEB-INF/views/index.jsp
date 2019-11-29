@@ -10,7 +10,7 @@
 <meta http-equiv="pragma" content="no-cache"> 
 <meta http-equiv="expires" content="0">
 <meta name="_CSRFToken" content="${_tokenval}">
-<title>系统管理平台 - 监狱版</title>
+<title>系统管理平台</title>
 <style>
 html, body {
 	height: 100%;
@@ -60,8 +60,8 @@ html, body {
 		</cui:layoutRegion>
 		<cui:layoutRegion region='south' split="false" style="height:25px">
 			<div id="footer" class="PanelFoot">
-				<h3 class="F-left">版本：监狱版</h3>
-				<h2 class="F-right">信息发展©2016版权所有</h2>
+				<h3 class="F-left">版本：1.0</h3>
+				<h2 class="F-right">guan.jun©版权所有</h2>
 			</div>
 		</cui:layoutRegion>
 	</cui:layout>

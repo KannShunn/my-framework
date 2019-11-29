@@ -69,6 +69,11 @@
 					<span>编码管理</span>
 				</li>
 				</sec:hasPermission>
+
+				<li class="hasTree" no="101" onclick="refreshBlank();" >
+					<img src="${ctx}/res/resource/style/css/images/iconsmall/iconzygl.png">
+					<span>工作流管理</span>
+				</li>
 			</ul>
 		</div>
 		
@@ -150,7 +155,13 @@
 								  asyncUrl="" asyncAutoParam="id,name" onClick="codeTreeClick" onLoad="treeAsyncExpandnode"  simpleDataEnable="true">
 						</cui:tree>
 					</div>
-
+					<div no="101">
+						<div class="menuLeftFirst2">
+							<ul>
+								<li><a href="#" onclick="repositoryClick()"><strong>流程部署</strong></a></li>
+							</ul>
+						</div>
+					</div>
 				</div>	
 			</div>
 			<!-- 二级树end -->
@@ -330,6 +341,10 @@ function operateLogClick(){
 function codeTreeClick(e, treeId, treeNode){
 	refreshCenter('${ctx}/auth/code/index?pId='+treeNode.id+"&code="+treeNode.code);
 }
- 
+
+
+function repositoryClick(e, treeId, treeNode){
+    refreshCenter('${ctx}/activity/repository/index');
+}
  /***************************************************编码模块结束******************************************/
 </script>

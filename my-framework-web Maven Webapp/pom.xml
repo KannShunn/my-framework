@@ -33,6 +33,12 @@
     	<artifactId>my-framework-jcaptcha</artifactId>
     	<version>0.0.1</version>
     </dependency>
+
+	  <dependency>
+		  <groupId>com.cesgroup</groupId>
+		  <artifactId>my-framework-activity</artifactId>
+		  <version>0.0.1</version>
+	  </dependency>
   </dependencies>
   <build>
     <finalName>${project.artifactId}-${project.version}</finalName>
