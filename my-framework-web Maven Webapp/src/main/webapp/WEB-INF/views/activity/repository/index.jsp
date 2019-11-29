@@ -16,23 +16,23 @@
     <div class="PanelCon">
        <div class="PanelList">
        		<div class="clearfix">
-	       		<div class="floatLeft2"><cui:toolbar id="codeToolbar"></cui:toolbar></div>
+	       		<div class="floatLeft2"><cui:toolbar id="repositoryToolbar"></cui:toolbar></div>
 	       		<div class="floatRight ">
 		       			<span class="se-searchall">
-		    				<cui:input id="code_search_text" type="text" width="220" placeholder="可检索编码名称" onEnter="codeSearchChange"></cui:input>
-		    				<span class=" icon icon-search3 search-Click" onClick="codeSearchChange()"></span>
+		    				<cui:input id="repository_search_text" type="text" width="220" placeholder="可检索编码名称" onEnter="repositorySearchChange"></cui:input>
+		    				<span class=" icon icon-search3 search-Click" onClick="repositorySearchChange()"></span>
 	    				</span>
 		       	</div>
        		</div>
 
-		   <cui:grid id="codeGrid" url="${ctx}/activity/repository/findLastVersionProcessDefinition" loadonce="false" asyncType="get" rownumbers="true" fitStyle="fill" multiselect="true" altRows="true">
+		   <cui:grid id="repositoryGrid" url="${ctx}/activity/repository/findLastVersionProcessDefinition" loadonce="false" asyncType="get" rownumbers="true" fitStyle="fill" multiselect="true" altRows="true">
 			   <cui:gridCols>
 				   <cui:gridCol name="key">key</cui:gridCol>
 				   <cui:gridCol name="version">version</cui:gridCol>
 				   <cui:gridCol name="deploymentId" width="40">deploymentId</cui:gridCol>
 				   <cui:gridCol name="resourceName" width="40" >resourceName</cui:gridCol>
 				   <cui:gridCol name="diagramResourceName" width="40" >diagramResourceName</cui:gridCol>
-				   <cui:gridCol  name="op" fixed="true" width="140" align="center" formatter="code_operateFormatter">操作选项</cui:gridCol>
+				   <cui:gridCol  name="op" fixed="true" width="140" align="center" formatter="repository_operateFormatter">操作选项</cui:gridCol>
 			   </cui:gridCols>
 		   </cui:grid>
        </div>
@@ -42,7 +42,7 @@
 <script>
 
 //工具栏
-var codeToolBarData = [
+var repositoryToolBarData = [
 {
 	"id"		: "newCode",
 	"label"		: "新增",
@@ -85,8 +85,8 @@ var codeToolBarData = [
 ];
 
 $(function(){
-	$("#codeToolbar").toolbar({
-		data : codeToolBarData
+	$("#repositoryToolbar").toolbar({
+		data : repositoryToolBarData
 	});
 })
 
