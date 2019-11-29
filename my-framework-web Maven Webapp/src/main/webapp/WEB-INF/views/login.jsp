@@ -11,7 +11,7 @@
 <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate"> 
 <meta http-equiv="pragma" content="no-cache"> 
 <meta http-equiv="expires" content="0">
-<title>复用统计平台-登录</title>
+<title>系统管理平台-登录</title>
 <link href="${ctx}/res/resource/style/css/inforGlobal.css" type="text/css" rel="stylesheet" />
 <link href="${ctx}/res/resource/style/css/login.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="${ctx }/res/cui/jquery-1.9.1.min.js"></script>
@@ -116,7 +116,7 @@
 	      </div>
       </form>
     </div>
-    <div class="copyright-login">信息发展©2016版权所有,版本: 1.0</div>
+    <div class="copyright-login">guan.jun©版权所有,版本: 1.0</div>
   </div>
 </div>
 </body>
