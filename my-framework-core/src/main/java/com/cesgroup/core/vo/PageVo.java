@@ -1,8 +1,8 @@
 package com.cesgroup.core.vo;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
+
+import java.util.List;
 
 /**
  * 组件库grid 组件对应的分页对象
@@ -80,6 +80,15 @@ public class PageVo
 			result.setTotal(page.getTotalElements());
 			result.setTotalPages(page.getTotalPages());
 		}
+		return result;
+	}
+	
+	public static PageVo success(List<?> data){
+		PageVo result = new PageVo();
+		if(data != null){
+			result.setData(data);
+		}
+		
 		return result;
 	}
 }

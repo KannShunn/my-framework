@@ -72,7 +72,7 @@
 
 				<li class="hasTree" no="101" onclick="refreshBlank();" >
 					<img src="${ctx}/res/resource/style/css/images/iconsmall/iconzygl.png">
-					<span>工作流管理</span>
+					<span>流程管理</span>
 				</li>
 			</ul>
 		</div>
@@ -158,7 +158,8 @@
 					<div no="101">
 						<div class="menuLeftFirst2">
 							<ul>
-								<li><a href="#" onclick="repositoryClick()"><strong>流程部署</strong></a></li>
+								<li><a href="#" onclick="deploymentClick()"><strong>部署管理</strong></a></li>
+								<li><a href="#" onclick="processDefinitionClick()"><strong>流程定义</strong></a></li>
 							</ul>
 						</div>
 					</div>
@@ -343,8 +344,12 @@ function codeTreeClick(e, treeId, treeNode){
 }
 
 
-function repositoryClick(e, treeId, treeNode){
-    refreshCenter('${ctx}/activity/repository/index');
+function deploymentClick(e){
+    refreshCenter('${ctx}/activity/repository-view/deploymentIndex');
+}
+
+function processDefinitionClick(e){
+    refreshCenter('${ctx}/activity/repository-view/processDefinitionIndex');
 }
  /***************************************************编码模块结束******************************************/
 </script>
