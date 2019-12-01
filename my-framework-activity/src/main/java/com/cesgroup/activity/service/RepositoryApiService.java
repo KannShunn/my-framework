@@ -12,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.ZipInputStream;
 
 /**
  * 类描述.
@@ -45,7 +47,7 @@ public class RepositoryApiService {
      * @return
      */
     public List<ProcessDefinitionVo> findLastVersionProcessDefinition(String searchText){
-        logger.info("请求最新的流程定义列表");
+        logger.info("查询最新的流程定义列表，搜索参数searchText：{}",searchText);
         List<ProcessDefinition> list = null;
         if(StringUtils.isEmpty(searchText)){
             list = repositoryService.createProcessDefinitionQuery().latestVersion().list();
@@ -66,6 +68,7 @@ public class RepositoryApiService {
     }
 
     public List<DeploymentVo> findDeploymentList(String searchText) {
+        logger.info("查询流程部署列表，搜索参数searchText：{}",searchText);
         List<Deployment> list = null;
         if(StringUtils.isEmpty(searchText)){
             list = repositoryService.createDeploymentQuery().orderByDeploymenTime().asc().list();
@@ -87,6 +90,28 @@ public class RepositoryApiService {
      * 删除部署信息
      */
     public void deleteDeployment(String deploymentId){
+        logger.info("删除部署信息，deploymentId：{}",deploymentId);
         repositoryService.deleteDeployment(deploymentId,true);
+    }
+
+    /**
+     * 部署流程
+     * @param file
+     * @param filename
+     */
+    public void uploadDeployment(MultipartFile file, String filename) {
+        logger.info("上传流程部署文件,filename:{}",filename);
+        ZipInputStream zipInputStream;
+        try {
+            zipInputStream = new ZipInputStream(file.getInputStream());
+
+            repositoryService.createDeployment()//创建部署对象
+                    .name(filename)//添加部署名称
+                    .addZipInputStream(zipInputStream)
+                    .deploy();
+
+        } catch (Exception e) {
+            logger.error("上传部署流程文件异常",e);
+        }
     }
 }

@@ -27,22 +27,41 @@
 
 		   <cui:grid id="processdefGrid" url="${ctx}/activity/repository-api/findLastVersionProcessDefinition" loadonce="false" asyncType="get" rownumbers="true" fitStyle="fill" multiselect="true" altRows="true">
 			   <cui:gridCols>
-				   <cui:gridCol name="key" width="40">key</cui:gridCol>
-				   <cui:gridCol name="version" width="40">version</cui:gridCol>
-				   <cui:gridCol name="deploymentId" width="40">deploymentId</cui:gridCol>
-				   <cui:gridCol name="resourceName" width="40" >resourceName</cui:gridCol>
-				   <cui:gridCol name="diagramResourceName" width="40" >diagramResourceName</cui:gridCol>
+				   <cui:gridCol name="key" width="40" align="center">key</cui:gridCol>
+				   <cui:gridCol name="version" width="40" align="center">version</cui:gridCol>
+				   <cui:gridCol name="deploymentId" width="40" align="center">deploymentId</cui:gridCol>
+				   <cui:gridCol name="resourceName" width="40" align="center">resourceName</cui:gridCol>
+				   <cui:gridCol name="diagramResourceName" width="40" align="center" >diagramResourceName</cui:gridCol>
 			   </cui:gridCols>
 		   </cui:grid>
        </div>
     </div>
 
-	 
+	<!-- 上传部署文件的对话框 -->
+	<%@include file="../deployment/uploadDeploymentDialog.jsp"%>
 <script>
 
 
-$(function(){
+//工具栏
+var processdefToolbarData = [
+	{
+		"id"		: "openUploadDeploymentDialogButton",
+		"label"		: "上传部署文件",
+		"disabled"	: "false",
+		"onClick"		: "openUploadDeploymentDialog()",
+		"type"		: "button",
+		"cls":"greenbtn",
+		"icon":"icon-plus-circle"
 
+
+	},
+	{}
+];
+
+$(function(){
+	$("#processdefToolbar").toolbar({
+		data : processdefToolbarData
+	});
 })
 
 

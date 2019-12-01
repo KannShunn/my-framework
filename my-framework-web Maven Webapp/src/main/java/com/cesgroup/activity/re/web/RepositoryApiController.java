@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 类描述.
@@ -50,6 +51,13 @@ public class RepositoryApiController {
     @RequestMapping(value="/deleteDeployment",method = RequestMethod.POST)
     public ResultResponse deleteDeployment(@RequestParam(value = "id") String id){
         repositoryApiService.deleteDeployment(id);
+        return ResultResponse.success("成功");
+    }
+
+    @RequestMapping(value="/uploadDeployment",method = RequestMethod.POST)
+    public ResultResponse uploadDeployment(@RequestParam(value = "Filedata",required = false) MultipartFile filedata,
+                                           @RequestParam(value = "filename",required = false) String filename){
+        repositoryApiService.uploadDeployment(filedata,filename);
         return ResultResponse.success("成功");
     }
 }

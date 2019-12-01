@@ -27,25 +27,26 @@
 
 		   <cui:grid id="deploymentGrid" url="${ctx}/activity/repository-api/findDeploymentList" loadonce="false" asyncType="get" rownumbers="true" fitStyle="fill" multiselect="true" altRows="true">
 			   <cui:gridCols>
-				   <cui:gridCol name="id">id</cui:gridCol>
-				   <cui:gridCol name="name">name</cui:gridCol>
-				   <cui:gridCol name="deploymentTime" width="40" >deploymentTime</cui:gridCol>
+				   <cui:gridCol name="id" align="center">id</cui:gridCol>
+				   <cui:gridCol name="name" align="center">name</cui:gridCol>
+				   <cui:gridCol name="deploymentTime" width="40" align="center" >deploymentTime</cui:gridCol>
 				   <cui:gridCol  name="op" fixed="true" width="140" align="center" formatter="deployment_operateFormatter">操作选项</cui:gridCol>
 			   </cui:gridCols>
 		   </cui:grid>
        </div>
     </div>
 
-	 
+	<!-- 上传部署文件的对话框 -->
+	<%@include file="uploadDeploymentDialog.jsp"%>
 <script>
 
 //工具栏
 var deploymentToolBarData = [
 {
-	"id"		: "newCode",
+	"id"		: "openUploadDeploymentDialogButton",
 	"label"		: "上传部署文件",
 	"disabled"	: "false",
-	"onClick"		: "addOrUpdateCode()",
+	"onClick"		: "openUploadDeploymentDialog()",
 	"type"		: "button",
 	"cls":"greenbtn",
 	"icon":"icon-plus-circle"
@@ -66,11 +67,11 @@ $(function(){
 function deploymentSearchChange(){
 	var searchText = $("#deployment_search_text").textbox("getValue");
 
-	var url = "${ctx}/auth/code/page?filter=pId_EQ_${pId};unitId_IN_-1,${CURRENTUSER.unitId};";
+	var url = "${ctx}/activity/repository-api/findDeploymentList?1=1";
 	if(searchText){
-		url += ";name_LIKE_"+searchText ;
+		url += "&searchText="+searchText ;
 	}
-	var grid = $("#codeGrid");
+	var grid = $("#deploymentGrid");
 	grid.grid("option","url",url);
 	grid.grid("reload");
 }
