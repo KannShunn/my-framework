@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
  * 描述:HttpClient的封装，用于后台模拟发送http请求。可发送post和get请求
  * </p>
  * <p>
- * Company:红星美凯龙家居股份有限公司
+ * Company:lion_guan
  * </p>
  *
  * @author 管俊(lion_guan@foxmail.com)

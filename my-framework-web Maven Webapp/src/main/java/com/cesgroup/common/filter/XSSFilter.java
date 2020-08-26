@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * 描述:跨站脚本攻击过滤类
  * </p>
  * <p>
- * Company:红星美凯龙家居股份有限公司
+ * Company:lion_guan
  * </p>
  *
  * @author 管俊(lion_guan@foxmail.com)
