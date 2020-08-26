@@ -15,7 +15,7 @@ import java.util.Map;
  * Company:红星美凯龙家居股份有限公司
  * </p>
  *
- * @author 管俊(guan.jun@chinaredstar.com)
+ * @author 管俊(lion_guan@foxmail.com)
  * @version 1.0
  * @date 2017/6/8 17:08
  */
