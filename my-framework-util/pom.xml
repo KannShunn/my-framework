@@ -19,7 +19,7 @@
 	<!-- jackson -->
 	<jackson.version>2.4.0</jackson.version>
 	<!-- fastjson -->
-	<alibaba-fastjson.version>1.2.8</alibaba-fastjson.version>
+	<alibaba-fastjson.version>1.2.25.sec10</alibaba-fastjson.version>
 	<!-- net.sf.json -->
 	<net-sf-json.version>2.3</net-sf-json.version>
 	<!-- pinyin4j -->
