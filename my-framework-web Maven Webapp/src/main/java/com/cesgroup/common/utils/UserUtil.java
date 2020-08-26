@@ -12,7 +12,7 @@ import org.apache.shiro.SecurityUtils;
  * Company:红星美凯龙家居集团股份有限公司
  * </p>
  *
- * @author 管俊(guan.jun@chinaredstar.com)
+ * @author 管俊(lion_guan@foxmail.com)
  * @version 1.0
  * @date 2019/12/1 14:16
  */
