@@ -9,7 +9,7 @@ import org.apache.shiro.SecurityUtils;
  * 描述:一段简短的描述
  * </p>
  * <p>
- * Company:红星美凯龙家居集团股份有限公司
+ * Company:lion_guan
  * </p>
  *
  * @author 管俊(lion_guan@foxmail.com)

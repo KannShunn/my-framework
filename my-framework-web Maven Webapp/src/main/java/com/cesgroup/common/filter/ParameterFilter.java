@@ -14,7 +14,7 @@ import java.io.IOException;
  * 描述:用于打印输出请求参数的过滤器
  * </p>
  * <p>
- * Company:红星美凯龙家居股份有限公司
+ * Company:lion_guan
  * </p>
  *
  * @author 管俊(lion_guan@foxmail.com)
