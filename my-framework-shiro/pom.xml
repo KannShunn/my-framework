@@ -12,7 +12,7 @@
   <url>http://maven.apache.org</url>
   <properties>
 	<!-- shiro -->
-	<shiro.version>1.2.3</shiro.version>
+	<shiro.version>1.6.0</shiro.version>
   </properties>
   <dependencies>
   	<dependency>
