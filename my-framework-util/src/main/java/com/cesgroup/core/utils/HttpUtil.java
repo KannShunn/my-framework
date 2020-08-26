@@ -37,7 +37,7 @@ import java.util.regex.Pattern;
  * Company:红星美凯龙家居股份有限公司
  * </p>
  *
- * @author 管俊(guan.jun@chinaredstar.com)
+ * @author 管俊(lion_guan@foxmail.com)
  * @version 1.0
  * @date 2017/3/30 20:11
  */
@@ -74,7 +74,7 @@ public class HttpUtil {
      *
      * @param httpclient
      * @param url
-     * Author:   guan.jun(管俊 <a href="mailto:guan.jun@chinaredstar.com">guan.jun@chinaredstar.com</a>)
+     * Author:   guan.jun(管俊 <a href="mailto:lion_guan@foxmail.com">lion_guan@foxmail.com</a>)
      * Date:     2016年10月20日 下午3:34:04
      */
     private static String post(String url, List<NameValuePair> parameters, CloseableHttpClient httpclient) {
@@ -113,7 +113,7 @@ public class HttpUtil {
      *
      * @param httpClient
      * @param url
-     * Author:   guan.jun(管俊 <a href="mailto:guan.jun@chinaredstar.com">guan.jun@chinaredstar.com</a>)
+     * Author:   guan.jun(管俊 <a href="mailto:lion_guan@foxmail.com">lion_guan@foxmail.com</a>)
      * Date:     2016年10月20日 下午3:34:02
      */
     private static String get(String url,CloseableHttpClient httpClient) {
