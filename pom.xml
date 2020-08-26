@@ -11,7 +11,7 @@
 
 	<properties>
 		<!-- spring -->
-		<spring.version>4.0.5.RELEASE</spring.version>
+		<spring.version>5.2.8.RELEASE</spring.version>
 		<spring-aspect.version>4.0.7.RELEASE</spring-aspect.version>
 		<spring-data.version>1.6.0.RELEASE</spring-data.version>
 		<!-- log -->
