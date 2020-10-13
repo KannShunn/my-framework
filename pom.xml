@@ -18,7 +18,7 @@
 		<slf4j.version>1.7.7</slf4j.version>
 		<logback.version>1.1.2</logback.version>
 		<!-- junit -->
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<!-- hibernate -->
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<hibernate-validation.version>5.1.1.Final</hibernate-validation.version>
