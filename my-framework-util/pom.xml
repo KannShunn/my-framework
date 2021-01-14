@@ -13,7 +13,7 @@
   <properties>
 
   	<!-- poi -->
-    <apache-poi.version>3.10-FINAL</apache-poi.version>
+    <apache-poi.version>3.17</apache-poi.version>
 	<!-- dozer -->
 	<dozer.version>5.5.1</dozer.version>
 	<!-- jackson -->
