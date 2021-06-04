@@ -27,7 +27,7 @@
 	<!-- joda-time -->
 	<joda-time.version>2.9.2</joda-time.version>
     <!-- httpClient -->
-    <commons.httpclient.version>4.5.2</commons.httpclient.version>
+    <commons.httpclient.version>4.5.13</commons.httpclient.version>
   </properties>
 
 
